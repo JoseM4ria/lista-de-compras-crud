@@ -2,6 +2,7 @@ import divisorias
 import recebeProdutos
 import listaFinal
 import apagarProdutoDaLista
+import atualizarProdutoDaLista
 
 
 def showMenu():
@@ -34,6 +35,12 @@ def showMenu():
             apagarProdutoDaLista.apagarItem("listaItens.txt", opc)
             apagarProdutoDaLista.apagarValor("listaValores.txt", opc)
             showMenu()
+        case 4:
+            atualizarProdutoDaLista.editarProduto()
+            atualizarProdutoDaLista.editarValor()
+            listaFinal.mostrarLista()
+            showMenu()
+
         case 0:
             print("Finalizando lista...")
             print("Obrigado e volte sempre")
