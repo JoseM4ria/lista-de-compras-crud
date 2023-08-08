@@ -21,6 +21,6 @@ def pegarProduto():
         if opc == "S":
             continue
         elif opc == "N":
-            guardarProdutoNaLista.guardarItens(listaItens, "listaItens.txt")
-            guardarProdutoNaLista.guardarValores(listaValor, "listaValores.txt")
+            guardarProdutoNaLista.guardarItens(listaItens)
+            guardarProdutoNaLista.guardarValores(listaValor)
             break

@@ -1,4 +1,5 @@
 import divisorias
+import guardarProdutoNaLista
 import recebeProdutos
 import listaFinal
 import apagarProdutoDaLista
@@ -20,7 +21,8 @@ def showMenu():
         case 1:
             recebeProdutos.pegarProduto()
             divisorias.linhaDivisoria()
-
+            listaFinal.mostrarLista()
+            divisorias.linhaDivisoria()
             showMenu()
         case 2:
             listaFinal.mostrarLista()
@@ -36,12 +38,23 @@ def showMenu():
             apagarProdutoDaLista.apagarValor("listaValores.txt", opc)
             showMenu()
         case 4:
-            atualizarProdutoDaLista.editarProduto()
-            atualizarProdutoDaLista.editarValor()
+            print("Qual produto você deseja ALTERAR? ")
+            listaFinal.mostrarLista()
+            divisorias.linhaDivisoria()
+            opc = int(input(f">>>>Sua opção: "))
+            alterar = opc - 1
+            novoProduto = input("Novo ítem: ")
+            novoValor = float(input("Valor: R$"))
+            recebeProdutos.listaItens[alterar] = novoProduto
+            recebeProdutos.listaValor[alterar] = novoValor
+            guardarProdutoNaLista.guardarItens(recebeProdutos.listaItens)
+            guardarProdutoNaLista.guardarValores(recebeProdutos.listaValor)
+            #atualizarProdutoDaLista.editarProduto(alterar, novoProduto)
+            #atualizarProdutoDaLista.editarValor(alterar,novoValor)
             listaFinal.mostrarLista()
             showMenu()
-
         case 0:
+            divisorias.linhaDivisoria()
             print("Finalizando lista...")
             print("Obrigado e volte sempre")
             divisorias.linhaDivisoria()
