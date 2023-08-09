@@ -24,6 +24,5 @@ def apagarValor(listaItens, apagarLinha):
                     valoresWrite.write(line)
                 ptr += 1
 
-
     print("LISTA ATUALIZADA: ")
     listaFinal.mostrarLista()

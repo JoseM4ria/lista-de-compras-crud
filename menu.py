@@ -30,18 +30,24 @@ def showMenu():
             showMenu()
         case 3:
             print("ESCOLHA O PRODUTO DESEJA REMOVER DA LISTA: ")
+            print(f"Escolha entre [1] e [{len(recebeProdutos.listaItens)}]")
+            divisorias.linhaDivisoria()
             listaFinal.mostrarLista()
+            divisorias.linhaDivisoria()
             opc = int(input(">>> SUA OPCAO: "))
-            recebeProdutos.listaItens.pop(opc-1)
-            recebeProdutos.listaValor.pop(opc-1)
+            recebeProdutos.listaItens.pop(opc - 1)
+            recebeProdutos.listaValor.pop(opc - 1)
             apagarProdutoDaLista.apagarItem("listaItens.txt", opc)
             apagarProdutoDaLista.apagarValor("listaValores.txt", opc)
+
             showMenu()
         case 4:
             print("Qual produto você deseja ALTERAR? ")
+            print(f"Escolha entre [1] e [{len(recebeProdutos.listaItens)}]")
+            divisorias.linhaDivisoria()
             listaFinal.mostrarLista()
             divisorias.linhaDivisoria()
-            opc = int(input(f">>>>Sua opção: "))
+            opc = int(input(">>>>Sua opção: "))
             alterar = opc - 1
             novoProduto = input("Novo ítem: ")
             novoValor = float(input("Valor: R$"))
@@ -49,8 +55,8 @@ def showMenu():
             recebeProdutos.listaValor[alterar] = novoValor
             guardarProdutoNaLista.guardarItens(recebeProdutos.listaItens)
             guardarProdutoNaLista.guardarValores(recebeProdutos.listaValor)
-            #atualizarProdutoDaLista.editarProduto(alterar, novoProduto)
-            #atualizarProdutoDaLista.editarValor(alterar,novoValor)
+            # atualizarProdutoDaLista.editarProduto(alterar, novoProduto)
+            # atualizarProdutoDaLista.editarValor(alterar,novoValor)
             listaFinal.mostrarLista()
             showMenu()
         case 0:
