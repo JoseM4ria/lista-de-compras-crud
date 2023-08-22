@@ -2,7 +2,7 @@ import apagarProdutoDaLista
 
 
 def editarProduto(alterar, novoProduto):]
-    with open("listaItens.txt", "w") as arquivoWrite:j1
+    with open("listaItens.txt", "w") as arquivoWrite:
         lines = arquivoWrite.readlines()
         for line in lines:
             arquivoWrite.write(line)
